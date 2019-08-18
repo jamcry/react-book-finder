@@ -8,17 +8,19 @@ class BookFinder extends Component {
     data: '',
     loading: false,
     selectedBook: '',
-    dimensions: {}
   }
 
   handleSearch = (text) => {
+    // Convert input into query format
     const searchWords = text.split(" ");
     const query = searchWords.join("+");
-    this.setState({selectedBook: '', data: '', loading: true})
+    // Reset the previous state, if any
+    this.setState({data: '', selectedBook: '',  loading: true});
     fetch(`http://openlibrary.org/search.json?q=${query}`)
       .then(response => response.json())
       .then(data => this.setState({ loading: false, data }));
-    //this.setState({ loading: false, data: mockData})
+    // Mock API fetch using previously fetched and saved data
+    // this.setState({ loading: false, data: mockData})
   }
 
   selectBook = (book) => {
@@ -28,10 +30,23 @@ class BookFinder extends Component {
   render() { 
     return (
       <>
+      <div className="jumbotron p-3">
       <SearchBar handleSearch={this.handleSearch} />
-      {this.state.loading && "LOADING..."}
-      {this.state.selectedBook && <Image book={this.state.selectedBook} /> }
-      {this.state.data && <SearchResults data={this.state.data} selectBook={this.selectBook} />}
+      </div>
+      { // Show "loading" msg if the fetching is going on
+        this.state.loading && "LOADING..."}
+      <div className="row">
+        <div className="col-md-5">
+          { // Load the cover img if a book is selected
+            this.state.selectedBook && <Image book={this.state.selectedBook} /> }
+
+        </div>
+        <div className="col-md-7" >
+          { // List search results if data has been fetched
+            this.state.data && <SearchResults data={this.state.data} selectBook={this.selectBook} />}
+
+        </div>
+      </div>
       </>
     );
   }

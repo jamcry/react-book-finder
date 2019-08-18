@@ -18,6 +18,7 @@ class Image extends Component {
   render() {
     let imgUrl = "";
     let imgPath = "";
+    // Try isbn and oclc codes for cover url
     if(this.props.book["isbn"]) {
       let isbn = this.props.book["isbn"][0];
       imgPath = "isbn/" + isbn;
@@ -33,7 +34,7 @@ class Image extends Component {
     return (
       <img
         onLoad={this.checkDimensions}
-        onError={e => (e.target.innerHTML = "FC")}
+        onError={() => alert("Error loading image!")}
         src={imgUrl}
         alt={`Cover of ${this.props.book["title_suggest"]}`}
       />

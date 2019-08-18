@@ -17,10 +17,15 @@ class SearchBar extends Component {
 
   render() { 
     return (
+      <div className="col-md-6 mt-2 mx-auto">
       <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.text} onChange={this.handleChange} />
-        <button>Search</button>
+        <div className="form-group row">
+        <input type="text" value={this.state.text} onChange={this.handleChange} className="form-control form-control-lg col-md-9"/>
+        <button className="btn btn-primary col-md-3">Search</button>
+        </div>
+        
       </form>
+      </div>
     );
   }
 }
