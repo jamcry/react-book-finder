@@ -1,0 +1,44 @@
+.search-results {
+  width: 50%;
+  margin: auto;
+}
+
+.search-results ul {
+  list-style: none;
+}
+
+.search-results li {
+  padding: 1rem;
+  font-size: 16px;
+  background: #444;
+  color: #eee;
+  
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: fit-content;
+  border: none;
+  border-radius: 5px;
+  margin: 1rem;
+  box-shadow: 0 0 5px #333;
+}
+.search-results li:hover {
+  background: #666;
+  cursor: pointer;
+}
+
+.search-results li h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.search-results li h2 {
+  margin: 0;
+  font-size: 16px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
