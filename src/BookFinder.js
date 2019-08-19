@@ -17,11 +17,11 @@ class BookFinder extends Component {
     const query = searchWords.join("+");
     // Reset the previous state, if any
     this.setState({ data: "", loading: true });
-    // fetch(`http://openlibrary.org/search.json?q=${query}`)
-    //   .then(response => response.json())
-    //   .then(data => this.setState({ loading: false, data }));
-    //Mock API fetch using previously fetched and saved data
-    this.setState({ loading: false, data: mockData, searchText: text });
+    fetch(`http://openlibrary.org/search.json?q=${query}`)
+      .then(response => response.json())
+      .then(data => this.setState({ loading: false, searchText: text, data }));
+    // Mock API fetch using previously fetched and saved data
+   //  this.setState({ loading: false, data: mockData, searchText: text });
   };
 
   render() {
