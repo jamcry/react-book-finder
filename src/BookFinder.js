@@ -30,11 +30,19 @@ class BookFinder extends Component {
         <div className="jumbotron p-3">
           <SearchBar handleSearch={this.handleSearch} />
         </div>
+        {
+          (!this.state.data && !this.state.loading) &&
+          <div>
+            <h1>Welcome to Book Finder!</h1>
+            <p>Enter keywords for your book (title, author, isbn, or else), then click the button.</p>
+          </div>
+        }
         {this.state.loading && <LoadingSpinner />}
         <div className="row">
           <div className="col-md-7 m-auto">
             {/* List search results if data has been fetched */}
-            {this.state.data && <SearchResults data={this.state.data} searchText={this.state.searchText} />}
+            {
+              this.state.data && <SearchResults data={this.state.data} searchText={this.state.searchText} />}
           </div>
         </div>
       </>
