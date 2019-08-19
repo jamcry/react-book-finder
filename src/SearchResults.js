@@ -36,12 +36,13 @@ class SearchResults extends Component {
       <div
         className="search-results"
       >
-        <h5>
-          Found{" "}
-          <span className="badge badge-success">
+        <div className="alert alert-info" role="alert" style={{fontSize: 18}}>
+          Found 
+          <span className="badge badge-pill badge-success mx-1 my-auto">
             {this.props.data.numFound}
           </span>
-        </h5>
+          results for "<b>{this.props.searchText}</b>".
+        </div>
         <ul className="list-group">{books}</ul>
         {this.props.data &&
           this.props.data.numFound > this.state.numOfBooksShowing && (
@@ -49,7 +50,7 @@ class SearchResults extends Component {
               Show more
             </button>
           )}
-      </div>
+        </div>
     );
   }
 }
