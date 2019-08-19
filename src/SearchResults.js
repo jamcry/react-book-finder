@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SearchResults.css";
+import SingleBook from "./SingleBook";
 
 class SearchResults extends Component {
   state = {
@@ -20,21 +21,20 @@ class SearchResults extends Component {
       this.props.data &&
       this.props.data["docs"]
         .slice(0, this.state.numOfBooksShowing)
-        .map(item => (
+        .map((item, index) => (
           <li
             className="list-group-item"
-            onClick={() => this.props.selectBook(item)}
+            key={`book-${index}`}
           >
-            <div className="col">
-              <h1>{item["title_suggest"]}</h1>
-              <h2>{item["author_name"]}</h2>
-            </div>
+            <SingleBook
+              bookId={`single-book-${index}`}
+              book={item}
+            />
           </li>
         ));
     return (
       <div
         className="search-results"
-        style={{ height: 400, overflowY: "scroll" }}
       >
         <h5>
           Found{" "}

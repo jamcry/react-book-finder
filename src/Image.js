@@ -1,17 +1,21 @@
 import React, { Component } from "react";
-
+import LoadingSpinner from "./LoadingSpinner";
 class Image extends Component {
   state = {
-    dimensions: {}
+    loading: true,
+    dimensions: {},
+    failed: false,
   };
 
   checkDimensions = ({ target: img }) => {
-    if (img.offsetHeight + img.offsetHeight < 5) alert("Not found!");
+    const failed = (img.offsetHeight + img.offsetHeight < 5);
     this.setState({
+      loading: false,
       dimensions: {
         height: img.offsetHeight,
-        width: img.offsetWidth
-      }
+        width: img.offsetWidth,
+      },
+      failed: failed,
     });
   };
 
@@ -32,12 +36,22 @@ class Image extends Component {
     imgUrl = `http://covers.openlibrary.org/b/${imgPath}-M.jpg`;
 
     return (
-      <img
-        onLoad={this.checkDimensions}
-        onError={() => alert("Error loading image!")}
-        src={imgUrl}
-        alt={`Cover of ${this.props.book["title_suggest"]}`}
-      />
+      <>
+      { this.state.loading && <LoadingSpinner /> }
+      {
+        (this.state.failed) ?
+        <div className="alert alert-danger" role="alert">
+          Cover not found!
+        </div>
+        :
+        <img
+          onLoad={this.checkDimensions}
+          onError={() => alert("Error loading image!")}
+          src={imgUrl}
+          alt={`Cover of ${this.props.book["title_suggest"]}`}
+        />
+      }
+      </>
     );
   }
 }
