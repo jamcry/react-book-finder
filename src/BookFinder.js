@@ -7,7 +7,7 @@ import LoadingSpinner from "./LoadingSpinner";
 class BookFinder extends Component {
   state = {
     data: "",
-    loading: false,
+    loading: false
   };
 
   handleSearch = text => {
@@ -16,10 +16,10 @@ class BookFinder extends Component {
     const query = searchWords.join("+");
     // Reset the previous state, if any
     this.setState({ data: "", selectedBook: "", loading: true });
-    //fetch(`http://openlibrary.org/search.json?q=${query}`)
-    //  .then(response => response.json())
-    //  .then(data => this.setState({ loading: false, data }));
-    // Mock API fetch using previously fetched and saved data
+    // fetch(`http://openlibrary.org/search.json?q=${query}`)
+    //   .then(response => response.json())
+    //   .then(data => this.setState({ loading: false, data }));
+    //Mock API fetch using previously fetched and saved data
     this.setState({ loading: false, data: mockData });
   };
 
@@ -29,15 +29,11 @@ class BookFinder extends Component {
         <div className="jumbotron p-3">
           <SearchBar handleSearch={this.handleSearch} />
         </div>
-        { this.state.loading && <LoadingSpinner /> }
+        {this.state.loading && <LoadingSpinner />}
         <div className="row">
           <div className="col-md-7 m-auto">
-            {// List search results if data has been fetched
-            this.state.data && (
-              <SearchResults
-                data={this.state.data}
-              />
-            )}
+            {/* List search results if data has been fetched */}
+            {this.state.data && <SearchResults data={this.state.data} />}
           </div>
         </div>
       </>
