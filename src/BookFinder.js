@@ -21,7 +21,7 @@ class BookFinder extends Component {
       .then(response => response.json())
       .then(data => this.setState({ loading: false, searchText: text, data }));
     // Mock API fetch using previously fetched and saved data
-   //  this.setState({ loading: false, data: mockData, searchText: text });
+    //  this.setState({ loading: false, data: mockData, searchText: text });
   };
 
   render() {
@@ -30,22 +30,28 @@ class BookFinder extends Component {
         <div className="jumbotron p-3 bg-light">
           <SearchBar handleSearch={this.handleSearch} />
         </div>
-        {
-          (!this.state.data && !this.state.loading) &&
+        {!this.state.data && !this.state.loading && (
           <div>
-          <Header as='h1' icon textAlign='center'>
-          <Icon name='book' circular />
-          <Header.Content>Welcome to BookFinder!</Header.Content>
-    </Header>
-            <p>Enter keywords for your book (title, author, isbn, or else), then click the button.</p>
+            <Header as="h1" icon textAlign="center">
+              <Icon name="book" circular />
+              <Header.Content>Welcome to BookFinder!</Header.Content>
+            </Header>
+            <p>
+              Enter keywords for your book (title, author, isbn, or else), then
+              click the button.
+            </p>
           </div>
-        }
+        )}
         {this.state.loading && <LoadingSpinner />}
         <div className="row">
           <div className="col-md-7 m-auto">
             {/* List search results if data has been fetched */}
-            {
-              this.state.data && <SearchResults data={this.state.data} searchText={this.state.searchText} />}
+            {this.state.data && (
+              <SearchResults
+                data={this.state.data}
+                searchText={this.state.searchText}
+              />
+            )}
           </div>
         </div>
       </>

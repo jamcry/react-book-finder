@@ -23,8 +23,12 @@ export default function Header() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          
           <ul className="navbar-nav mt-2 mt-lg-0 ml-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Home
+              </a>
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
                 Go Top
@@ -32,7 +36,7 @@ export default function Header() {
             </li>
           </ul>
 
-         { /* SEARCH FORM
+          {/* SEARCH FORM
           <form className="form-inline my-2 my-lg-0 ml-auto">
             <input
               className="form-control mr-sm-2"
@@ -46,8 +50,7 @@ export default function Header() {
               Search
             </button>
           </form>
-          */
-         }
+          */}
         </div>
       </nav>
     </header>

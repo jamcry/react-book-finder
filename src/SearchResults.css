@@ -38,7 +38,13 @@
   margin: 0;
   font-size: 16px;
 }
+
 .col {
   display: flex;
   flex-direction: column;
+}
+
+.btn-cover {
+  margin-right: 0 !important;
+  margin-left: auto !important;
 }

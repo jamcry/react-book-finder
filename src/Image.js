@@ -4,18 +4,18 @@ class Image extends Component {
   state = {
     loading: true,
     dimensions: {},
-    failed: false,
+    failed: false
   };
 
   checkDimensions = ({ target: img }) => {
-    const failed = (img.offsetHeight + img.offsetHeight < 5);
+    const failed = img.offsetHeight + img.offsetHeight < 5;
     this.setState({
       loading: false,
       dimensions: {
         height: img.offsetHeight,
-        width: img.offsetWidth,
+        width: img.offsetWidth
       },
-      failed: failed,
+      failed: failed
     });
   };
 
@@ -23,7 +23,7 @@ class Image extends Component {
     let imgUrl = "";
     let imgPath = "";
     // Try isbn and oclc codes for cover url
-    if(this.props.book["isbn"]) {
+    if (this.props.book["isbn"]) {
       let isbn = this.props.book["isbn"][0];
       imgPath = "isbn/" + isbn;
     } else if (this.props.book["oclc"]) {
@@ -37,20 +37,19 @@ class Image extends Component {
 
     return (
       <>
-      { this.state.loading && <LoadingSpinner /> }
-      {
-        (this.state.failed) ?
-        <div className="alert alert-danger" role="alert">
-          Cover not found!
-        </div>
-        :
-        <img
-          onLoad={this.checkDimensions}
-          onError={() => alert("Error loading image!")}
-          src={imgUrl}
-          alt={`Cover of ${this.props.book["title_suggest"]}`}
-        />
-      }
+        {this.state.loading && <LoadingSpinner />}
+        {this.state.failed ? (
+          <div className="alert alert-danger" role="alert">
+            Cover not found!
+          </div>
+        ) : (
+          <img
+            onLoad={this.checkDimensions}
+            onError={() => alert("Error loading image!")}
+            src={imgUrl}
+            alt={`Cover of ${this.props.book["title_suggest"]}`}
+          />
+        )}
       </>
     );
   }
