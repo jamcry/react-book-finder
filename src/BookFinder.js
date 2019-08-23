@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
 import mockData from "./mockData";
 import LoadingSpinner from "./LoadingSpinner";
-
+import { Header, Icon } from "semantic-ui-react";
 class BookFinder extends Component {
   state = {
     data: "",
@@ -27,13 +27,16 @@ class BookFinder extends Component {
   render() {
     return (
       <>
-        <div className="jumbotron p-3">
+        <div className="jumbotron p-3 bg-light">
           <SearchBar handleSearch={this.handleSearch} />
         </div>
         {
           (!this.state.data && !this.state.loading) &&
           <div>
-            <h1>Welcome to Book Finder!</h1>
+          <Header as='h1' icon textAlign='center'>
+          <Icon name='book' circular />
+          <Header.Content>Welcome to BookFinder!</Header.Content>
+    </Header>
             <p>Enter keywords for your book (title, author, isbn, or else), then click the button.</p>
           </div>
         }

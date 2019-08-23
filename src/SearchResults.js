@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./SearchResults.css";
 import SingleBook from "./SingleBook";
+import { Button, Header, Icon, Segment, List} from "semantic-ui-react";
 
 class SearchResults extends Component {
   state = {
@@ -22,35 +23,36 @@ class SearchResults extends Component {
       this.props.data["docs"]
         .slice(0, this.state.numOfBooksShowing)
         .map((item, index) => (
-          <li
-            className="list-group-item"
-            key={`book-${index}`}
-          >
-            <SingleBook
-              bookId={`single-book-${index}`}
-              book={item}
-            />
-          </li>
+          <SingleBook
+            bookId={index}
+            book={item}
+          />
         ));
     return (
       <div
         className="search-results"
       >
-        <div className="alert alert-info" role="alert" style={{fontSize: 18}}>
-          Found 
+        <Segment placeholder>
+          <Header icon>
+            <Icon name="pdf file outline" />
+            Found 
           <span className="badge badge-pill badge-success mx-1 my-auto">
             {this.props.data.numFound}
           </span>
           results for "<b>{this.props.searchText}</b>".
-        </div>
-        <ul className="list-group">{books}</ul>
+          </Header>
+          <List celled size="big">
+            {books}
+          </List>
         {this.props.data &&
           this.props.data.numFound > this.state.numOfBooksShowing && (
             <button className="btn btn-warning mt-3" onClick={this.showMore}>
               Show more
             </button>
           )}
+        </Segment>
         </div>
+        
     );
   }
 }
