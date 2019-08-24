@@ -1,7 +1,8 @@
 {
   "name": "book-finder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
+  "homepage": "https://jamcry.github.io/react-book-finder",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
