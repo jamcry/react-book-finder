@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import BookFinder from "./BookFinder";
 import Header from "./Header";
+import './App.css';
+
 function App() {
   return (
     <div className="App">

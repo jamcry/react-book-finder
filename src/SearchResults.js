@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./SearchResults.css";
 import SingleBook from "./SingleBook";
-import { Button, Header, Icon, Segment, List } from "semantic-ui-react";
+import { Header, Icon, Segment, List } from "semantic-ui-react";
 
 class SearchResults extends Component {
   state = {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
+// eslint-disable-next-line
 import mockData from "./mockData";
 import LoadingSpinner from "./LoadingSpinner";
 import { Header, Icon } from "semantic-ui-react";
