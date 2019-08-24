@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.aeb6f11f.chunk.css",
-    "main.js": "/static/js/main.723ab29c.chunk.js",
-    "main.js.map": "/static/js/main.723ab29c.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a6165135.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a6165135.js.map",
-    "static/css/2.621b5bde.chunk.css": "/static/css/2.621b5bde.chunk.css",
-    "static/js/2.25a82755.chunk.js": "/static/js/2.25a82755.chunk.js",
-    "static/js/2.25a82755.chunk.js.map": "/static/js/2.25a82755.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.107859f7b74883545ddb78c4fda64af4.js": "/precache-manifest.107859f7b74883545ddb78c4fda64af4.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.621b5bde.chunk.css.map": "/static/css/2.621b5bde.chunk.css.map",
-    "static/css/main.aeb6f11f.chunk.css.map": "/static/css/main.aeb6f11f.chunk.css.map",
-    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff"
+    "main.css": "/react-book-finder/static/css/main.aeb6f11f.chunk.css",
+    "main.js": "/react-book-finder/static/js/main.b8aedd29.chunk.js",
+    "main.js.map": "/react-book-finder/static/js/main.b8aedd29.chunk.js.map",
+    "runtime~main.js": "/react-book-finder/static/js/runtime~main.3b3a1be5.js",
+    "runtime~main.js.map": "/react-book-finder/static/js/runtime~main.3b3a1be5.js.map",
+    "static/css/2.30216e46.chunk.css": "/react-book-finder/static/css/2.30216e46.chunk.css",
+    "static/js/2.25a82755.chunk.js": "/react-book-finder/static/js/2.25a82755.chunk.js",
+    "static/js/2.25a82755.chunk.js.map": "/react-book-finder/static/js/2.25a82755.chunk.js.map",
+    "index.html": "/react-book-finder/index.html",
+    "precache-manifest.86c1b32e738084bcf9383c25e3b1dec3.js": "/react-book-finder/precache-manifest.86c1b32e738084bcf9383c25e3b1dec3.js",
+    "service-worker.js": "/react-book-finder/service-worker.js",
+    "static/css/2.30216e46.chunk.css.map": "/react-book-finder/static/css/2.30216e46.chunk.css.map",
+    "static/css/main.aeb6f11f.chunk.css.map": "/react-book-finder/static/css/main.aeb6f11f.chunk.css.map",
+    "static/media/semantic.min.css": "/react-book-finder/static/media/outline-icons.ef60a4f6.woff"
   }
 }
