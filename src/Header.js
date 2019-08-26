@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="#">
           <span role="img" aria-label="books">
             📚
           </span>{" "}
@@ -14,18 +14,18 @@ export default function Header() {
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
+          data-target="#headerNavbarToggler"
+          aria-controls="headerNavbarToggler"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon" />
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div className="collapse navbar-collapse" id="headerNavbarToggler">
           <ul className="navbar-nav mt-2 mt-lg-0 ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="./">
                 Home
               </a>
             </li>
