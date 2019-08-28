@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="./">
           <span role="img" aria-label="books">
             📚
           </span>{" "}
