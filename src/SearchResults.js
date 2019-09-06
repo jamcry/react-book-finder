@@ -8,16 +8,18 @@ class SearchResults extends Component {
     numOfBooksShowing: 4
   };
 
+  // Reset number of books showing everytime the results is mounted
   componentDidMount() {
     this.setState({ numOfBooksShowing: 4 });
   }
 
+  // Increment the number of books showing by 4
   showMore = () => {
     this.setState(prev => ({ numOfBooksShowing: prev.numOfBooksShowing + 4 }));
   };
 
   render() {
-    console.log(typeof this.props.data);
+    // Slice out the first element which is data head
     const books =
       this.props.data &&
       this.props.data["docs"]

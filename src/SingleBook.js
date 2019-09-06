@@ -3,11 +3,11 @@ import Image from "./Image";
 import { List, Button } from "semantic-ui-react";
 class SingleBook extends Component {
   state = {
-    selected: false
+    expanded: false
   };
 
   handleClick = () => {
-    this.setState({ selected: true });
+    this.setState({ expanded: true });
   };
 
   render() {
@@ -34,7 +34,7 @@ class SingleBook extends Component {
           </div>
           <div className="collapse" id={`collapse-book-${this.props.bookId}`}>
             <div className="book-cover text-center">
-              {this.state.selected && <Image book={this.props.book} />}
+              {this.state.expanded && <Image book={this.props.book} />}
             </div>
           </div>
         </List.Content>
