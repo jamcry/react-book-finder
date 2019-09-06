@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import LoadingSpinner from "./LoadingSpinner";
+import { Loader } from "semantic-ui-react";
+
 class Image extends Component {
   state = {
     loading: true,
@@ -37,7 +38,7 @@ class Image extends Component {
 
     return (
       <>
-        {this.state.loading && <LoadingSpinner />}
+        {this.state.loading && <Loader active inline />}
         {this.state.failed ? (
           <div className="alert alert-danger" role="alert">
             Cover not found!

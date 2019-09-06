@@ -3,8 +3,7 @@ import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
 // eslint-disable-next-line
 import mockData from "./mockData";
-import LoadingSpinner from "./LoadingSpinner";
-import { Header, Icon } from "semantic-ui-react";
+import { Header, Icon, Loader } from "semantic-ui-react";
 class BookFinder extends Component {
   state = {
     data: "",
@@ -31,6 +30,7 @@ class BookFinder extends Component {
         <div className="jumbotron p-3 bg-light">
           <SearchBar handleSearch={this.handleSearch} />
         </div>
+        {/* Show the greeting message if no data is present */}
         {!this.state.data && !this.state.loading && (
           <div>
             <Header as="h1" icon textAlign="center">
@@ -43,7 +43,7 @@ class BookFinder extends Component {
             </p>
           </div>
         )}
-        {this.state.loading && <LoadingSpinner />}
+        {this.state.loading && <Loader size="massive" active inline/>}
         <div className="row">
           <div className="col-md-7 m-auto">
             {/* List search results if data has been fetched */}
