@@ -3,7 +3,9 @@ import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
 // eslint-disable-next-line
 import mockData from "./mockData";
-import { Header, Icon, Loader } from "semantic-ui-react";
+import HomeMessage from "./HomeMessage";
+import { Loader } from "semantic-ui-react";
+
 class BookFinder extends Component {
   state = {
     data: "",
@@ -30,29 +32,19 @@ class BookFinder extends Component {
         <div className="jumbotron p-3 bg-light">
           <SearchBar handleSearch={this.handleSearch} />
         </div>
-        {/* Show the greeting message if no data is present */}
-        {!this.state.data && !this.state.loading && (
-          <div className="container">
-            <Header as="h1" icon textAlign="center">
-              <Icon name="book" circular />
-              <Header.Content>Welcome to BookFinder!</Header.Content>
-            </Header>
-            <p>
-              Enter keywords for your book (title, author, isbn, or else), then
-              click the button.
-            </p>
-          </div>
-        )}
-        {this.state.loading && <Loader size="massive" active inline/>}
-          <div className="container">
-            {/* List search results if data has been fetched */}
-            {this.state.data && (
-              <SearchResults
-                data={this.state.data}
-                searchText={this.state.searchText}
-              />
-            )}
-          </div>
+        <div className="container">
+          {/* Show the greeting message if no data is present */}
+          {!this.state.data && !this.state.loading && <HomeMessage />}
+          {/* Show loading spinner while search results are loading */}
+          {this.state.loading && <Loader size="massive" active inline />}
+          {/* List search results if data has been fetched */}
+          {this.state.data && (
+            <SearchResults
+              data={this.state.data}
+              searchText={this.state.searchText}
+            />
+          )}
+        </div>
       </>
     );
   }
