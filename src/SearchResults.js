@@ -18,13 +18,21 @@ class SearchResults extends Component {
     this.setState(prev => ({ numOfBooksShowing: prev.numOfBooksShowing + 4 }));
   };
 
+  // Maps the book data to SingleBook components
+  createBookComponents = data => {
+    return (
+      data &&
+      data["docs"]
+        .slice(0, this.state.numOfBooksShowing)
+        .map((item, index) => (
+          <SingleBook key={"book-" + index} bookId={index} book={item} />
+        ))
+    );
+  };
+  
   render() {
     // Slice out the first element which is data head
-    const books =
-      this.props.data &&
-      this.props.data["docs"]
-        .slice(0, this.state.numOfBooksShowing)
-        .map((item, index) => <SingleBook bookId={index} book={item} />);
+    const books = this.createBookComponents(this.props.data);
     const hasResults = !!books.length;
     const iconNames = hasResults ? "book" : "warning circle";
     const badgeClass = hasResults ? "badge-success" : "badge-danger";
