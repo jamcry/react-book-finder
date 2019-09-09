@@ -3,12 +3,12 @@ import BookFinder from "./BookFinder";
 import Header from "./Header";
 import "./App.css";
 import About from "./About";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <div className="mt-5 pt-2">
           <Switch>
@@ -16,7 +16,7 @@ function App() {
             <Route path="/about" component={About} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
