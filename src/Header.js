@@ -1,4 +1,8 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import App from "./App";
+import BookFinder from "./BookFinder";
+import About from "./About";
 
 export default function Header() {
   return (
@@ -25,9 +29,14 @@ export default function Header() {
         <div className="collapse navbar-collapse" id="headerNavbarToggler">
           <ul className="navbar-nav mt-2 mt-lg-0 ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="./">
+              <Link to="/" className="nav-link">
                 Home
-              </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/about" className="nav-link">
+                About
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
@@ -37,20 +46,20 @@ export default function Header() {
           </ul>
 
           {/* SEARCH FORM
-          <form className="form-inline my-2 my-lg-0 ml-auto">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
-          */}
+            <form className="form-inline my-2 my-lg-0 ml-auto">
+              <input
+                className="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+              />
+              <button
+                className="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+            */}
         </div>
       </nav>
     </header>

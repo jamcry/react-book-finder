@@ -39,10 +39,7 @@ class BookFinder extends Component {
           {this.state.loading && <Loader size="massive" active inline />}
           {/* List search results if data has been fetched */}
           {this.state.data && (
-            <SearchResults
-              data={this.state.data}
-              searchText={this.state.searchText}
-            />
+            <SearchResults data={this.state.data} searchText={this.state.searchText} />
           )}
         </div>
       </>
