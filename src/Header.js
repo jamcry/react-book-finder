@@ -29,7 +29,7 @@ export default function Header() {
         <div className="collapse navbar-collapse" id="headerNavbarToggler">
           <ul className="navbar-nav mt-2 mt-lg-0 ml-auto">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="./" className="nav-link">
                 Home
               </Link>
             </li>
