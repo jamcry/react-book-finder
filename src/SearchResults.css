@@ -45,6 +45,6 @@
 }
 
 .btn-cover {
-  margin-right: 0 !important;
-  margin-left: auto !important;
+  margin: auto !important;
+  width: 100%;
 }

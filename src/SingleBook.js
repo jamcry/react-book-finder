@@ -28,7 +28,7 @@ class SingleBook extends Component {
                 aria-expanded="false"
                 aria-controls={`collapse-book-${this.props.bookId}`}
                 content="Find cover"
-                className="btn-cover"
+                className="btn-cover m-auto"
               />
             </div>
           </div>

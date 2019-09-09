@@ -32,7 +32,7 @@ class BookFinder extends Component {
         </div>
         {/* Show the greeting message if no data is present */}
         {!this.state.data && !this.state.loading && (
-          <div>
+          <div className="container">
             <Header as="h1" icon textAlign="center">
               <Icon name="book" circular />
               <Header.Content>Welcome to BookFinder!</Header.Content>
@@ -44,8 +44,7 @@ class BookFinder extends Component {
           </div>
         )}
         {this.state.loading && <Loader size="massive" active inline/>}
-        <div className="row">
-          <div className="col-md-7 m-auto">
+          <div className="container">
             {/* List search results if data has been fetched */}
             {this.state.data && (
               <SearchResults
@@ -54,7 +53,6 @@ class BookFinder extends Component {
               />
             )}
           </div>
-        </div>
       </>
     );
   }
